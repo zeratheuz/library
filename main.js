@@ -1,10 +1,10 @@
 const myLibrary = []
 
-function Book(title, author, artist, pages, read) {
+function Book(title, author, artist, issues, read) {
   this.title = title,
   this.author = author,
   this.artist = artist,
-  this.pages = pages,
+  this.issues = issues,
   this.read = read,
   this.id = crypto.randomUUID()
 }
