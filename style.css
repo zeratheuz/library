@@ -18,6 +18,7 @@ input, button, textarea, select {
 body {
   margin: 5% 10%;
   text-align: center;
+  background: bisque;
 }
 
 h1 {
@@ -26,5 +27,6 @@ h1 {
 
 .books {
   height: 70vh;
+  background: beige;
   border: solid black;
 }
