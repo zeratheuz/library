@@ -25,11 +25,15 @@ function addBookToLibrary(title, author, artist, issues, read) {
   myLibrary.push(new Book(title, author, artist, issues, read))
 }
 
-
-
+function displayBooks() {
   const books = document.querySelector(".books")
-  books.textContent = myLibrary[-1]
-  for (let book in myLibrary) {
-
-    books.innerHTML += myLibrary[book].title
+  for (let i in myLibrary) {
+    const book = document.createElement("div")
+    book.setAttribute("class", "book")
+    book.setAttribute("id", myLibrary[i].id)
+    book.textContent = myLibrary[i].title
+    books.appendChild(book)
   }
+}
+
+displayBooks()
