@@ -40,7 +40,7 @@ body {
   overflow: auto;
   background: beige;
   border: solid black;
-  grid-auto-rows: 14.6rem;
+  grid-auto-rows: 14.66rem;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 

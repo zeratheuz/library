@@ -45,3 +45,10 @@ function displayBooks() {
     container.appendChild(div)
   })
 }
+
+const newBook = document.querySelector("#newBook")
+const closeDialog = document.querySelector("#closeDialog")
+const containerDialog = document.querySelector("#containerDialog")
+
+newBook.addEventListener("click", () => containerDialog.showModal())
+closeDialog.addEventListener("click", () => containerDialog.close())
