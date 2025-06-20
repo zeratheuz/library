@@ -11,7 +11,6 @@ addBookToLibrary("Nightwing (2021)", "Tom Taylor", "Bruno Redondo", "30", false)
 addBookToLibrary("Future State: Superman/Wonder Woman", "Dan Watters", "Leila Del Duca & Lucas Meyer", "2", false);
 addBookToLibrary("Batman/Superman: World's Finest", "Mark Waid", "Dan Mora", "26", false);
 
-
 function Book(title, author, artist, issues, read) {
   this.title = title,
     this.author = author,
@@ -23,17 +22,26 @@ function Book(title, author, artist, issues, read) {
 
 function addBookToLibrary(title, author, artist, issues, read) {
   myLibrary.push(new Book(title, author, artist, issues, read))
+  displayBooks()
 }
 
 function displayBooks() {
-  const books = document.querySelector(".books")
-  for (let i in myLibrary) {
-    const book = document.createElement("div")
-    book.setAttribute("class", "book")
-    book.setAttribute("id", myLibrary[i].id)
-    book.textContent = myLibrary[i].title
-    books.appendChild(book)
-  }
-}
+  const container = document.querySelector(".container")
+  container.innerHTML = ''
 
-displayBooks()
+  myLibrary.forEach(book => {
+    const div = document.createElement("div")
+    div.setAttribute("class", "book")
+    div.setAttribute("id", book.id)
+
+    div.innerHTML = `
+      <p><b>Title: </b>${book.title}</p>
+      <p><b>Author: </b>${book.author}</p>
+      <p><b>Artist: </b>${book.artist}</p>
+      <p><b>Issues: </b>${book.issues}</p>
+      <p><b>read: </b>${book.read}</p>
+      `
+
+    container.appendChild(div)
+  })
+}

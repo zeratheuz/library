@@ -35,7 +35,7 @@ h1 {
   margin-bottom: 2rem;
 }
 
-.books {
+.container {
   gap: 1rem;
   height: 70vh;
   padding: 1rem;
@@ -43,11 +43,12 @@ h1 {
   overflow: auto;
   background: beige;
   border: solid black;
-  grid-auto-rows: 200px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: 14.7rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .book {
   padding: 1rem;
   border: solid;
+  overflow: auto;
 }
