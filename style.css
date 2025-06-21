@@ -31,6 +31,22 @@ body {
   background: bisque;
 }
 
+dialog {
+  margin: auto;
+  background: bisque;
+}
+
+form {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+}
+
+input {
+  margin-bottom: 1rem;
+  background-color: beige;
+}
+
 .container {
   gap: 1rem;
   height: 70vh;
@@ -57,5 +73,14 @@ body {
   padding: 1rem 2rem;
   outline-style: none;
   border: solid black;
+  background: burlywood;
+}
+
+.close-dialog {
+  cursor: pointer;
+  align-self: end;
+  font-weight: bold;
+  border-style: none;
+  outline-style: none;
   background: burlywood;
 }
