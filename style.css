@@ -38,6 +38,7 @@ dialog {
 
 form {
   display: flex;
+  font-weight: bold;
   align-items: start;
   flex-direction: column;
 }
@@ -45,6 +46,20 @@ form {
 input {
   margin-bottom: 1rem;
   background-color: beige;
+}
+
+form button {
+  cursor: pointer;
+  align-self: end;
+  font-weight: bold;
+  border-style: none;
+  outline-style: none;
+  border: solid black;
+  background: burlywood;
+}
+
+form button:hover {
+  background: beige ;
 }
 
 .container {
@@ -73,14 +88,5 @@ input {
   padding: 1rem 2rem;
   outline-style: none;
   border: solid black;
-  background: burlywood;
-}
-
-.close-dialog {
-  cursor: pointer;
-  align-self: end;
-  font-weight: bold;
-  border-style: none;
-  outline-style: none;
   background: burlywood;
 }
