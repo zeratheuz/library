@@ -120,11 +120,14 @@ function displayBooks() {
     div.setAttribute("id", book.id)
 
     div.innerHTML = `
+    <button type="button" class="remove-button">x</button>
+    <div>
       <p><b>Title: </b>${book.title}</p>
       <p><b>Writer: </b>${book.writer}</p>
       <p><b>Artist: </b>${book.artist}</p>
       <p><b>Issues: </b>${book.issues}</p>
       <p><b>Read: </b>${book.isRead}</p>
+    <div/>
       `
 
     container.appendChild(div)

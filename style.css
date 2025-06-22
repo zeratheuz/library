@@ -48,7 +48,8 @@ input {
   background-color: beige;
 }
 
-form button {
+form button,
+.remove-button {
   cursor: pointer;
   align-self: end;
   font-weight: bold;
@@ -76,6 +77,8 @@ form button:hover {
 }
 
 .book {
+  display: flex;
+  flex-direction: column;
   padding: 1rem;
   border: solid;
   overflow: auto;
