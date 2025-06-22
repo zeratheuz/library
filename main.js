@@ -1,16 +1,5 @@
 const myLibrary = []
 
-addBookToLibrary("All-Star Superman", "Grant Morrison", "Frank Quitely", "12", true);
-// addBookToLibrary("V for Vendetta", "Alan Moore", "David Lloyd", "10", true);
-// addBookToLibrary("Flash Forward", "Scott Lobdell", "Brett Booth", "6", false);
-// addBookToLibrary("Batman: The Killing Joke", "Alan Moore", "Brian Bolland", "1", true);
-// addBookToLibrary("Lobo: The Last Czarnian", "Keith Giffen & Alan Grant", "Simon Bisley", "4", false);
-// addBookToLibrary("Green Lantern: Sinestro Corps War", "Geoff Johns & Dave Gibbons", "Ethan Van Sciver & Ivan Reis", "5", false);
-// addBookToLibrary("Wonder Woman #1", "Tom King", "Daniel Sampere", "1", false);
-// addBookToLibrary("Nightwing (2021)", "Tom Taylor", "Bruno Redondo", "30", false);
-// addBookToLibrary("Future State: Superman/Wonder Woman", "Dan Watters", "Leila Del Duca & Lucas Meyer", "2", false);
-// addBookToLibrary("Batman/Superman: World's Finest", "Mark Waid", "Dan Mora", "26", false);
-
 function Book(title, author, artist, issues, read) {
   this.title = title,
     this.author = author,
@@ -52,3 +41,12 @@ const containerDialog = document.querySelector("#containerDialog")
 
 newBook.addEventListener("click", () => containerDialog.showModal())
 closeDialog.addEventListener("click", () => containerDialog.close())
+
+const form = document.querySelector("#bookData")
+form.addEventListener("submit", (event) => {
+  event.preventDefault()
+  const bookData = new FormData(form)
+  const book = Object.fromEntries(bookData.entries())
+  addBookToLibrary(book)
+  containerDialog.close()
+})

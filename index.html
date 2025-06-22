@@ -16,20 +16,20 @@
   <button id="newBook" class="new-book">New Book</button>
 
   <dialog id="containerDialog">
-    <form action="" method="post">
+    <form action="" method="post" id="bookData">
       <button type="button" id="closeDialog" class="close-dialog">X</button>
       <label for="title">Title:</label>
-      <input type="text" id="title">
+      <input type="text" id="title" name="title" required>
       <label for="author">Author:</label>
-      <input type="text" id="author">
+      <input type="text" id="author" name="author" required>
       <label for="artist">Artist:</label>
-      <input type="text" id="artist">
+      <input type="text" id="artist" name="artist" required>
       <label for="issues">Issues:</label>
-      <input type="number" min="1" id="issues">
+      <input type="number" min="1" id="issues" name="issues" required>
       <div class="containerRead">
         <label for="read">Read?</label>
-        <input type="radio" id="read" value="Yes">Yes</input>
-        <input type="radio" id="read" value="No">No</input>
+        <input type="radio" id="read" value="Yes" name="read" required>Yes</input>
+        <input type="radio" id="read" value="No" name="read" required>No</input>
       </div>
       <button type="submit" id="addBook">Add Book</button>
     </form>
