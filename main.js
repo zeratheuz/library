@@ -120,7 +120,7 @@ function displayBooks() {
     div.setAttribute("id", book.id)
 
     div.innerHTML = `
-    <button type="button" class="remove-button">x</button>
+    <button type="button" class="remove-button" data-bookid="${book.id}">x</button>
     <div>
       <p><b>Title: </b>${book.title}</p>
       <p><b>Writer: </b>${book.writer}</p>
@@ -133,6 +133,17 @@ function displayBooks() {
     container.appendChild(div)
   })
 }
+
+const buttons = document.querySelectorAll(".remove-button")
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    console.log(button.dataset.bookid)
+    const id = `#${button.dataset.bookid}`
+    const book = document.querySelector(id)
+    console.log(book)
+  })
+});
+
 
 const newBook = document.querySelector("#newBook")
 const closeDialog = document.querySelector("#closeDialog")
