@@ -102,7 +102,10 @@ function Book(title, writer, artist, issues, isRead) {
     this.artist = artist,
     this.issues = issues,
     this.isRead = isRead,
-    this.id = crypto.randomUUID()
+    this.id = crypto.randomUUID(),
+    isReadToggle() {
+      this.isRead === "Yes" ? isRead = "No" : isRead = "Yes"
+    }
 }
 
 function addBookToLibrary(object) {
@@ -126,7 +129,10 @@ function displayBooks() {
       <p><b>Writer: </b>${book.writer}</p>
       <p><b>Artist: </b>${book.artist}</p>
       <p><b>Issues: </b>${book.issues}</p>
-      <p><b>Read: </b>${book.isRead}</p>
+      <p>
+      <b>Read: </b>
+      <button type="button" class="isReadButton">${book.isRead}</button>
+      </p>
     <div/>
       `
 
