@@ -103,8 +103,8 @@ function Book(title, writer, artist, issues, isRead) {
     this.issues = issues,
     this.isRead = isRead,
     this.id = crypto.randomUUID(),
-    isReadToggle() {
-      this.isRead === "Yes" ? isRead = "No" : isRead = "Yes"
+    this.isReadToggle = function () {
+      this.isRead === "Yes" ? this.isRead = "No" : this.isRead = "Yes"
     }
 }
 
@@ -151,6 +151,14 @@ function displayBooks() {
           const index = myLibrary.findIndex(book => book.id === id)
           myLibrary.splice(index, 1)
         }
+      })
+    })
+
+    const isReadButtons = document.querySelectorAll(".isReadButton")
+    isReadButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        book.isReadToggle()
+        button.textContent = book.isRead
       })
     })
   })
