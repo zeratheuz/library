@@ -139,7 +139,12 @@ function displayBooks() {
         const id = button.dataset.bookid
         const book = document.getElementById(id)
 
-        if (book) container.removeChild(book)
+        if (book) {
+          container.removeChild(book)
+
+          const index = myLibrary.findIndex(book => book.id === id)
+          myLibrary.splice(index, 1)
+        }
       })
     })
   })
