@@ -131,7 +131,7 @@ function displayBooks() {
       <p><b>Issues: </b>${book.issues}</p>
       <p>
       <b>Read: </b>
-      <button type="button" class="isReadButton">${book.isRead}</button>
+      <button type="button" class="isReadButton" data-bookid="${book.id}">${book.isRead}</button>
       </p>
     <div/>
       `
@@ -153,16 +153,20 @@ function displayBooks() {
         }
       })
     })
-
-    const isReadButtons = document.querySelectorAll(".isReadButton")
-    isReadButtons.forEach(button => {
-      button.addEventListener("click", () => {
-        book.isReadToggle()
-        button.textContent = book.isRead
-      })
-    })
   })
 }
+
+const isReadButtons = document.querySelectorAll(".isReadButton")
+isReadButtons.forEach(button => {
+
+  button.addEventListener("click", () => {
+    const id = button.dataset.bookid
+
+    const book = myLibrary.find(book => book.id == id)
+    book.isReadToggle()
+    button.textContent = book.isRead
+  })
+})
 
 const newBook = document.querySelector("#newBook")
 const closeDialog = document.querySelector("#closeDialog")
