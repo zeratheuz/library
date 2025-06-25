@@ -56,7 +56,8 @@ input {
 }
 
 form button,
-.remove-button {
+.remove-button, 
+.isRead-button {
   cursor: pointer;
   align-self: end;
   font-weight: bold;

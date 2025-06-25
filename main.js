@@ -111,6 +111,7 @@ function Book(title, writer, artist, issues, isRead) {
 function addBookToLibrary(object) {
   myLibrary.push(new Book(object.title, object.writer, object.artist, object.issues, object.isRead))
   displayBooks()
+  isRead()
 }
 
 function displayBooks() {
@@ -131,15 +132,15 @@ function displayBooks() {
       <p><b>Issues: </b>${book.issues}</p>
       <p>
       <b>Read: </b>
-      <button type="button" class="isReadButton" data-bookid="${book.id}">${book.isRead}</button>
+      <button type="button" class="isRead-button" data-bookid="${book.id}">${book.isRead}</button>
       </p>
     <div/>
       `
 
     container.appendChild(div)
 
-    const buttons = document.querySelectorAll(".remove-button")
-    buttons.forEach(button => {
+    const removeButtons = document.querySelectorAll(".remove-button")
+    removeButtons.forEach(button => {
 
       button.addEventListener("click", () => {
         const id = button.dataset.bookid
@@ -156,17 +157,19 @@ function displayBooks() {
   })
 }
 
-const isReadButtons = document.querySelectorAll(".isReadButton")
-isReadButtons.forEach(button => {
+function isRead() {
+  const isReadButtons = document.querySelectorAll(".isRead-button")
+  isReadButtons.forEach(button => {
 
-  button.addEventListener("click", () => {
-    const id = button.dataset.bookid
+    button.addEventListener("click", () => {
+      const id = button.dataset.bookid
+      const book = myLibrary.find(book => book.id == id)
 
-    const book = myLibrary.find(book => book.id == id)
-    book.isReadToggle()
-    button.textContent = book.isRead
+      book.isReadToggle()
+      button.textContent = book.isRead
+    })
   })
-})
+}
 
 const newBook = document.querySelector("#newBook")
 const closeDialog = document.querySelector("#closeDialog")
