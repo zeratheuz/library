@@ -40,7 +40,7 @@ function displayBooks() {
       <b>Read: </b>
       <button type="button" class="isRead-button" data-bookid="${book.id}">${book.isRead}</button>
       </p>
-    <div/>
+    </div>
       `
 
     container.appendChild(div)
