@@ -1,5 +1,4 @@
-# [Library](https://zeratheuz.github.io/library/)
-
+# [<img src="images/comic-book.png" width="30"/> Library](https://zeratheuz.github.io/library/)
 ---
 
 ## 🚀 Technologies
