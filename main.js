@@ -93,6 +93,25 @@ form.addEventListener("submit", (event) => {
   containerDialog.close()
 })
 
+const inputs = document.querySelectorAll("input[required]")
+
+inputs.forEach(input => {
+
+  input.addEventListener("invalid", () => {
+    
+    if (title.validity.valueMissing) {
+      input.setCustomValidity(`The ${input.name} must be filled!`)
+    } else {
+      title.setCustomValidity("")
+    }
+  })
+
+  input.addEventListener("input", () => {
+    input.setCustomValidity("")
+  })
+})
+
+
 addBookToLibrary({
   title: "All-Star Superman",
   writer: "Grant Morrison",
