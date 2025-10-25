@@ -95,14 +95,14 @@ form.addEventListener("submit", (event) => {
 
 const inputs = document.querySelectorAll("input[required]")
 
-inputs.forEach(input => {
+inputs.forEach((input, index) => {
 
   input.addEventListener("invalid", () => {
     
-    if (title.validity.valueMissing) {
+    if (!input.checkValidity() && index < inputs.length -1) {
       input.setCustomValidity(`The ${input.name} must be filled!`)
     } else {
-      title.setCustomValidity("")
+      input.setCustomValidity("")
     }
   })
 
@@ -110,7 +110,6 @@ inputs.forEach(input => {
     input.setCustomValidity("")
   })
 })
-
 
 addBookToLibrary({
   title: "All-Star Superman",
